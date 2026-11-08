@@ -1,0 +1,63 @@
+{
+  "name": "dsh-capability-center",
+  "version": "0.1.0",
+  "description": "能力中心：把 DSH 的技能、插件、组合包和 MCP 连接器做成豆包式的可视化管理页 —— 分组列表、开关、搜索，点一下把技能插进对话。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "locale",
+    "cordis.patch.yml",
+    "tools",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/smoke.mjs",
+    "install-profile": "node tools/install.mjs",
+    "uninstall-profile": "node tools/uninstall.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "skills",
+    "capability",
+    "panel",
+    "mcp"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niueigang/dsh-capability-center.git"
+  },
+  "homepage": "https://github.com/niueigang/dsh-capability-center#readme",
+  "bugs": {
+    "url": "https://github.com/niueigang/dsh-capability-center/issues"
+  },
+  "author": "niueigang",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}

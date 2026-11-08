@@ -1,0 +1,12 @@
+# dsh-capability-center bundle patch
+#
+# 只做一件事：把自己的服务行插进 profile 的 loader 树。
+# 不碰任何别人的节点 —— 改别人的 config 会在宿主换版本时校验失败或把宿主改坏。
+
+- insert:
+    - id: capability-center
+      name: 'dsh-capability-center'
+      config:
+        enabled: true
+        # 侧栏入口排序：插件(0) 之后、自动化任务(10) 之前
+        panelOrder: 5
