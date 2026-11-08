@@ -22,6 +22,9 @@ param(
   [switch]$Force
 )
 
+try { [Console]::OutputEncoding = [System.Text.Encoding]::UTF8 } catch {}
+try { $OutputEncoding = [System.Text.Encoding]::UTF8 } catch {}
+
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
 
